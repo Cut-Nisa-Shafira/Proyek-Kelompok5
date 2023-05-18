@@ -118,3 +118,58 @@ void loadQuestions()
     soal[4].Jawaban = 'A';
     soal[4].points = 20;
 }
+int convertAnswer(char answer)
+{
+    answer = toupper(answer);
+    switch (answer)
+    {
+    case 'A':
+        return 0;
+    case 'B':
+        return 1;
+    case 'C':
+        return 2;
+    case 'D':
+        return 3;
+    default:
+        return -1;
+    }
+}
+
+int playGame()
+{
+    int totalPoints = 0;
+
+    for (int i = 0; i < MAX_QUESTIONS; i++)
+    {
+        printf("Pertanyaan %d:\n", i + 1);
+        printf("%s\n", soal[i].pertanyaan);
+        printf("%s\n", soal[i].pilihan[0]);
+        printf("%s\n", soal[i].pilihan[1]);
+        printf("%s\n", soal[i].pilihan[2]);
+        printf("%s\n", soal[i].pilihan[3]);
+
+        char answer;
+        printf("Masukkan Jawaban (A/B/C/D): ");
+        scanf(" %c", &answer);
+
+        int choice = convertAnswer(answer);
+        if (choice == -1)
+        {
+            printf("Jawaban tidak valid.\n");
+        }
+        else if (choice == soal[i].Jawaban - 'A')
+        {
+            totalPoints += soal[i].points;
+            printf("Selamat, Jawaban Anda Benar!\n");
+        }
+        else
+        {
+            printf("Yahhh, jawabannya salah, yuk belajar lagi!\n");
+        }
+
+        printf("\n");
+    }
+
+    return totalPoints;
+}
