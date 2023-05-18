@@ -173,3 +173,31 @@ int playGame()
 
     return totalPoints;
 }
+
+int main(int argc, char *argv[])
+{
+    if (argc == 2 && strcmp(argv[1], "register") == 0)
+    {
+        registerUser();
+    }
+    else if (argc == 3)
+    {
+        char *username = argv[1];
+        char *password = argv[2];
+        loginpengguna(username, password);
+
+        loadQuestions();
+        int finalScore = playGame();
+
+        printf("Final Score: %d\n", finalScore);
+    }
+    else
+    {
+        printf("Invalid arguments.\n");
+        printf("Usage: ./namafile register\n");
+        printf("Usage: ./namafile \"username dengan spasi\" <password> (jika sandi tidak mengandung spasi)\n");
+        printf("Usage: ./namafile \"username dengan spasi\" \"username dengan spasi\" (jika sandi mengandung spasi)\n");
+    }
+
+    return 0;
+}
