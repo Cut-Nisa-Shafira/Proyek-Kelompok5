@@ -71,3 +71,50 @@ void loginpengguna(char *username, char *password)
         exit(1);
     }
 }
+void loadQuestions()
+{
+    // Pertanyaan 1
+    strcpy(soal[0].pertanyaan, "Siapa nama ayah Boboiboy?");
+    strcpy(soal[0].pilihan[0], "A. Amato");
+    strcpy(soal[0].pilihan[1], "B. Azroy");
+    strcpy(soal[0].pilihan[2], "C. Uno");
+    strcpy(soal[0].pilihan[3], "D. Upin");
+    soal[0].Jawaban = 'A';
+    soal[0].points = 20;
+
+    // Pertanyaan 2
+    strcpy(soal[1].pertanyaan, "Siapa nama kakek Boboiboy?");
+    strcpy(soal[1].pilihan[0], "A. Haji Senin Jum'at");
+    strcpy(soal[1].pilihan[1], "B. Tok Aba");
+    strcpy(soal[1].pilihan[2], "C. Opah");
+    strcpy(soal[1].pilihan[3], "D. Mas Dibo");
+    soal[1].Jawaban = 'B';
+    soal[1].points = 20;
+
+    // Pertanyaan 3
+    strcpy(soal[2].pertanyaan, "Dari mana kekuatan Boboiboy berasal?");
+    strcpy(soal[2].pilihan[0], "A Dibo");
+    strcpy(soal[2].pilihan[1], "B. Ansell");
+    strcpy(soal[2].pilihan[2], "C. Ochobot");
+    strcpy(soal[2].pilihan[3], "D. Freya");
+    soal[2].Jawaban = 'C';
+    soal[2].points = 20;
+
+    // Pertanyaan 4
+    strcpy(soal[3].pertanyaan, "Siapa nama alien kepale kotak? ");
+    strcpy(soal[3].pilihan[0], "A. Proub");
+    strcpy(soal[3].pilihan[1], "B. Fang");
+    strcpy(soal[3].pilihan[2], "C. Tigreal");
+    strcpy(soal[3].pilihan[3], "D. Adudu");
+    soal[3].Jawaban = 'D';
+    soal[3].points = 20;
+
+    // Pertanyaan 5
+    strcpy(soal[4].pertanyaan, "Kapan tanggal lahir Boboiboy?");
+    strcpy(soal[4].pilihan[0], "A. 13 Maret");
+    strcpy(soal[4].pilihan[1], "B. 22 Juli");
+    strcpy(soal[4].pilihan[2], "C. 1 Februai");
+    strcpy(soal[4].pilihan[3], "D. 31 Februar");
+    soal[4].Jawaban = 'A';
+    soal[4].points = 20;
+}
