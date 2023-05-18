@@ -1,0 +1,9 @@
+Membuat akun pada saat menjalankan program
+
+PS C:\Users\Barrafi\OneDrive\UAS Alpro> gcc .\Barrafi.c -o .\namafile    
+PS C:\Users\Barrafi\OneDrive\UAS Alpro> ./namafile register
+Registration
+Username: Barrafi Qauli
+Password: Opi220704
+PS C:\Users\Barrafi\OneDrive\UAS Alpro> ./namafile "Barrafi Qauli" "Opi220704"
+Login Sukses. Selamat Datang, Barrafi Qauli!
