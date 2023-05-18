@@ -1,0 +1,4 @@
+Akun yang telah dibuat pada saat menjalankan program akan terbuat otomatis sebuah file .txt (Login.txt) yang berisi username dan password yang telah dibuat dan diverivikasi sebeumnya
+
+Barrafi Qauli
+Opi220704
