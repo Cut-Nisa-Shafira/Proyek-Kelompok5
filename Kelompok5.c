@@ -71,6 +71,90 @@ void loginpengguna(char *username, char *password)
         exit(1);
     }
 }
+void loadQuestions()
+{
+    // Pertanyaan 1
+    strcpy(soal[0].pertanyaan, "Siapa nama ayah Boboiboy?");
+    strcpy(soal[0].pilihan[0], "A. Amato");
+    strcpy(soal[0].pilihan[1], "B. Azroy");
+    strcpy(soal[0].pilihan[2], "C. Uno");
+    strcpy(soal[0].pilihan[3], "D. Upin");
+    soal[0].Jawaban = 'A';
+    soal[0].points = 20;
+
+    // Pertanyaan 2
+    strcpy(soal[1].pertanyaan, "Siapa nama kakek Boboiboy?");
+    strcpy(soal[1].pilihan[0], "A. Haji Senin Jum'at");
+    strcpy(soal[1].pilihan[1], "B. Tok Aba");
+    strcpy(soal[1].pilihan[2], "C. Opah");
+    strcpy(soal[1].pilihan[3], "D. Mas Dibo");
+    soal[1].Jawaban = 'B';
+    soal[1].points = 20;
+
+    // Pertanyaan 3
+    strcpy(soal[2].pertanyaan, "Dari mana kekuatan Boboiboy berasal?");
+    strcpy(soal[2].pilihan[0], "A Dibo");
+    strcpy(soal[2].pilihan[1], "B. Ansell");
+    strcpy(soal[2].pilihan[2], "C. Ochobot");
+    strcpy(soal[2].pilihan[3], "D. Freya");
+    soal[2].Jawaban = 'C';
+    soal[2].points = 20;
+int convertAnswer(char answer)
+{
+    answer = toupper(answer);
+    switch (answer)
+    {
+    case 'A':
+        return 0;
+    case 'B':
+        return 1;
+    case 'C':
+        return 2;
+    case 'D':
+        return 3;
+    default:
+        return -1;
+    }
+}
+
+int playGame()
+{
+    int totalPoints = 0;
+
+    for (int i = 0; i < MAX_QUESTIONS; i++)
+    {
+        printf("Pertanyaan %d:\n", i + 1);
+        printf("%s\n", soal[i].pertanyaan);
+        printf("%s\n", soal[i].pilihan[0]);
+        printf("%s\n", soal[i].pilihan[1]);
+        printf("%s\n", soal[i].pilihan[2]);
+        printf("%s\n", soal[i].pilihan[3]);
+
+        char answer;
+        printf("Masukkan Jawaban (A/B/C/D): ");
+        scanf(" %c", &answer);
+
+        int choice = convertAnswer(answer);
+        if (choice == -1)
+        {
+            printf("Jawaban tidak valid.\n");
+        }
+        else if (choice == soal[i].Jawaban - 'A')
+        {
+            totalPoints += soal[i].points;
+            printf("Selamat, Jawaban Anda Benar!\n");
+        }
+        else
+        {
+            printf("Yahhh, jawabannya salah, yuk belajar lagi!\n");
+        }
+
+        printf("\n");
+    }
+
+    return totalPoints;
+}
+
 }
 int main(int argc, char *argv[])
 {
