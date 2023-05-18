@@ -99,6 +99,25 @@ void loadQuestions()
     strcpy(soal[2].pilihan[3], "D. Freya");
     soal[2].Jawaban = 'C';
     soal[2].points = 20;
+    
+     // Pertanyaan 4
+    strcpy(soal[3].pertanyaan, "Siapa nama alien kepale kotak? ");
+    strcpy(soal[3].pilihan[0], "A. Proub");
+    strcpy(soal[3].pilihan[1], "B. Fang");
+    strcpy(soal[3].pilihan[2], "C. Tigreal");
+    strcpy(soal[3].pilihan[3], "D. Adudu");
+    soal[3].Jawaban = 'D';
+    soal[3].points = 20;
+
+    // Pertanyaan 5
+    strcpy(soal[4].pertanyaan, "Kapan tanggal lahir Boboiboy?");
+    strcpy(soal[4].pilihan[0], "A. 13 Maret");
+    strcpy(soal[4].pilihan[1], "B. 22 Juli");
+    strcpy(soal[4].pilihan[2], "C. 1 Februai");
+    strcpy(soal[4].pilihan[3], "D. 31 Februar");
+    soal[4].Jawaban = 'A';
+    soal[4].points = 20;
+}
 int convertAnswer(char answer)
 {
     answer = toupper(answer);
